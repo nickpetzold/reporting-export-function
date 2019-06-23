@@ -1,7 +1,14 @@
-<h1>{{ data['organization'] }}</h1>
-<h1>{{ data['reported_at'] }}</h1>
-<h1>{{ data['created_at'] }}</h1>
+<div style="text-align: center;"><h1>The Report</h1></div>
 
-{% for item in data['inventory'] %}
-    <h2>{{ item['name'] }}:{{ item['price'] }}</h2>
-{% endfor %}
+<div style="text-align: right;">
+    <p>Organization: {{ data['organization'] }}</p>
+    <p>Reported: {{ data['reported_at'] }}</p>
+    <p>Created: {{ data['created_at'] }}</p>
+</div>
+
+
+<div style="text-align: center; padding-top: 50px;">
+    {% for item in data['inventory'] %}
+        <h3>{{ item['name'] }}: {{ item['price'] }}</h3>
+    {% endfor %}
+</div>
