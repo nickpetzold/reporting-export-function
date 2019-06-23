@@ -1,0 +1,7 @@
+<h1>{{ data['organization'] }}</h1>
+<h1>{{ data['reported_at'] }}</h1>
+<h1>{{ data['created_at'] }}</h1>
+
+{% for item in data['inventory'] %}
+    <h2>{{ item['name'] }}:{{ item['price'] }}</h2>
+{% endfor %}
