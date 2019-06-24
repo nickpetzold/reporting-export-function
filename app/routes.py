@@ -22,6 +22,7 @@ def report_query_pdf(id):
     pdf_template = render_template("pdf_template.html", data=data)
     pdf = pdfkit.from_string(pdf_template, False)
 
+    # Build response to serve pdf as it's own page in the browser
     response = make_response(pdf)
     response.headers['Content-Disposition'] = f"inline; filename={filename}"
     response.headers['Content-type'] = 'application/pdf'
@@ -30,7 +31,6 @@ def report_query_pdf(id):
 
 @app.route("/report_xml/<id>", methods=["GET"])
 def report_query_xml(id):
-    filename = f"report_{id}.pdf"
     data = get_data_for_report_id(id)
 
     report_element = ET.Element("report")
@@ -48,7 +48,7 @@ def report_query_xml(id):
     root = report.getroot()
     xml_string = ET.tostring(root, encoding='utf8', method='xml')
 
+    # Build response from xml string to serve xml file directly in the browser
     response = make_response(xml_string)
     response.headers['Content-type'] = 'text/xml; charset=utf-8'
     return response
-
