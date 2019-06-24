@@ -13,6 +13,8 @@ flask-sqlalchemy = "*"
 pdfkit = "*"
 wkhtmltopdf = "*"
 python-dotenv = "*"
+pytest = "*"
+flask-migrate = "*"
 
 [requires]
 python_version = "3.7"
