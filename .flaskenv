@@ -1,0 +1,4 @@
+FLASK_APP=reporting_service.py
+DB_USERNAME=interview
+DB_PASSWORD=uo4uu3AeF3
+DATABASE_URL=candidate.suade.org/suade
