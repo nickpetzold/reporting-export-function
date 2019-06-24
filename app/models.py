@@ -1,6 +1,3 @@
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import JSON, Column, Integer, String, Text
-from sqlalchemy.schema import FetchedValue
 
 from app import db
 
